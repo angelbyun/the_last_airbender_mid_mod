@@ -1,1 +1,29 @@
-There are 97 members who live in the Fire Nation
+<h1>Fire Nation</h1>
+
+<p><b>There are <%= @members.count %> members who live in the <%= @view_nation %></b></p>
+
+<b>List of Members</b>
+
+<% @members.each do |member| %>
+  <section class="member">
+    <div class="photo"><%= image_tag("#{member.photo}") %></div>
+    <p><b>Name:</b> <div class="name"><%= member.name %></div></p>
+    <p><b>Affiliation:</b> <div class="affiliation"><%= member.affiliation %></div></p>
+    <p><b>Allies:</b> <div class="allies">
+      <ul>
+      <% member.allies.each do |ally| %>
+        <li><%= ally %></li>
+      <% end %>
+      </ul>
+      </div>
+      </p>
+    <p><b>Enemies:</b> <div class="enemies">
+      <ul>
+      <% member.enemies.each do |enemy| %>
+        <li><%= enemy %></li>
+      <% end %>
+      </ul>
+      </div>
+      </p>
+  </section>
+<% end %>
