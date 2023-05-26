@@ -4,7 +4,7 @@ class FireNationService
   def list_members(search_nation)
     search_nation.gsub!('_', '+')
 
-    get_url("api/v1/characters?affiliation=#{search_nation}")
+    get_url("api/v1/characters?affiliation=#{search_nation}&perPage=100")
   end
 
   private
